@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Genero" EntityType="Database1Model.Store.Genero" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Musica" EntityType="Database1Model.Store.Musica" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoUsuario" EntityType="Database1Model.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="Database1Model.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MusicaGenero_ToTable" Association="Database1Model.Store.FK_MusicaGenero_ToTable">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="Musica" EntitySet="Musica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoUsuario_ToTable" Association="Database1Model.Store.FK_TipoUsuario_ToTable">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Genero">
+    <Key>
+      <PropertyRef Name="IdGenero" />
+    </Key>
+    <Property Name="IdGenero" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Musica">
+    <Key>
+      <PropertyRef Name="IdMusica" />
+    </Key>
+    <Property Name="IdMusica" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Preco" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="IdTipoUsuario" />
+    </Key>
+    <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
+    <Property Name="nomeTipoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_MusicaGenero_ToTable">
+    <End Role="Genero" Type="Database1Model.Store.Genero" Multiplicity="1" />
+    <End Role="Musica" Type="Database1Model.Store.Musica" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="IdGenero" />
+      </Principal>
+      <Dependent Role="Musica">
+        <PropertyRef Name="IdMusica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoUsuario_ToTable">
+    <End Role="TipoUsuario" Type="Database1Model.Store.TipoUsuario" Multiplicity="1" />
+    <End Role="Usuario" Type="Database1Model.Store.Usuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="IdTipoUsuario" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
