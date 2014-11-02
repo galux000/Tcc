@@ -93,6 +93,5 @@ C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.dll
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.pdb
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.updateMusicaTable.resources
-C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csprojResolveAssemblyReference.cache
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.newMusicaTable.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.UpdateMusica.resources

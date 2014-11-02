@@ -12,30 +12,27 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.genero.Nome)
+            <span>Genero</span>
+        </th>
+        
+        <th>
+            <span>Nome</span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            <span>Artista</span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeArtista)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Preco)
+            <span>Preço</span>
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    if (item.UserId == Int32.Parse(Membership.GetUser().ProviderUserKey.ToString()))
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.genero.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
@@ -52,6 +49,7 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.MusicaId })
         </td>
     </tr>
+}
 }
 
 </table>
