@@ -20,5 +20,6 @@ namespace TestTcc2.Models
         public string NomeArtista { get; set; }
         public Genero genero { get; set; }
         public decimal Preco { get; set; }
+        public bool isFree { get; set; }
     }
 }

@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201410252057372_UpdateMusica.Designer.cs">
       <DependentUpon>201410252057372_UpdateMusica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411032001420_MusicFree.cs" />
+    <Compile Include="Migrations\201411032001420_MusicFree.Designer.cs">
+      <DependentUpon>201411032001420_MusicFree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Genero.cs" />
@@ -261,10 +265,14 @@
     <Content Include="App_Data\aspnet-TestTcc2-20140907134144_log.ldf">
       <DependentUpon>aspnet-TestTcc2-20140907134144.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\audiojs\audio.min.js" />
+    <Content Include="Content\audiojs\audiojs.swf" />
+    <Content Include="Content\audiojs\player-graphics.gif" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dewplayer-bubble.swf" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -448,6 +456,12 @@
     <EmbeddedResource Include="Migrations\201410252057372_UpdateMusica.resx">
       <DependentUpon>201410252057372_UpdateMusica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411032001420_MusicFree.resx">
+      <DependentUpon>201411032001420_MusicFree.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mp3\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

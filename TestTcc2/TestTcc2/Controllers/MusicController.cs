@@ -58,6 +58,11 @@ namespace TestTcc2.Controllers
 
                 musica.UserId = userId;
                 musica.NomeArtista = userName;
+                if (musica.isFree)
+                {
+                    
+                    musica.Preco = 0;
+                }
 
                 if (ModelState.IsValid)
                 {
