@@ -1,19 +1,24 @@
 ﻿@model IEnumerable<TestTcc2.Models.Musica>
 
-@{
+<div>@{
     ViewBag.Title = "Index";
 }
-<!--<script src="Content/audiojs/audio.min.js"></script>
+</div>
+<div>
+    <script src="Content/audiojs/audio.min.js"></script>
 
-    <audio src="/mp3/" preload="auto" />
+    <audio src="/mp3/teste.mp3" preload="auto" />
 <script>
-  audiojs.events.ready(function() {
-    var as = audiojs.createAll();
-  });
-</script>-->
+    audiojs.events.ready(function () {
+        var as = audiojs.createAll();
+        
+    });
+</script>
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
 <table>
     <tr>
         <th>

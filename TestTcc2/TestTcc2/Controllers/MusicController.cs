@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,8 +13,9 @@ namespace TestTcc2.Controllers
 {
     public class MusicController : Controller
     {
+        //public Musica music;
         private UsersContext db = new UsersContext();
-
+        private Musica musicaReference;
         //
         // GET: /Music/
 
@@ -50,34 +52,47 @@ namespace TestTcc2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-            public ActionResult Create(Musica musica)
+        public ActionResult Create(Musica musica)
+        {
+            MembershipUser user = Membership.GetUser();
+            int userId = Int32.Parse(Membership.GetUser().ProviderUserKey.ToString());
+            string userName = user.UserName;
+            
+            musica.UserId = userId;
+            musica.NomeArtista = userName;
+
+            if (musica.isFree)
             {
-                MembershipUser user = Membership.GetUser();
-                int userId = Int32.Parse( Membership.GetUser().ProviderUserKey.ToString());
-                string userName = user.UserName;
 
-                musica.UserId = userId;
-                musica.NomeArtista = userName;
-                if (musica.isFree)
-                {
-                    
-                    musica.Preco = 0;
-                }
-
-                if (ModelState.IsValid)
-                {
-                    db.Musicas.Add(musica);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-
-                ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "Nome", musica.GeneroId);
-                return View(musica);
+                musica.Preco = 0;
             }
 
+            //Here I try to take the path value
+            //musica.path = musicaReference.path;
+
+            if (ModelState.IsValid)
+            {
+                db.Musicas.Add(musica);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "Nome", musica.GeneroId);
+            return View(musica);
+        }
+
+
+        public ActionResult Upload()
+        {
+            var file = Request.Files["Filedata"];
+            string savePath = Server.MapPath(@"~\mp3\" + file.FileName);
+            file.SaveAs(savePath);
+           // musicaReference.path = "~\\mp3\\"+file.FileName;
+
+            return Content(Url.Content(@"~\mp3\" + file.FileName));
+        }
         //
         // GET: /Music/Edit/5
-
         public ActionResult Edit(int id = 0)
         {
             Musica musica = db.Musicas.Find(id);
@@ -118,6 +133,7 @@ namespace TestTcc2.Controllers
             }
             return View(musica);
         }
+
 
         //
         // POST: /Music/Delete/5

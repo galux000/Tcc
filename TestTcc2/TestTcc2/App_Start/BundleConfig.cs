@@ -40,8 +40,10 @@ namespace TestTcc2
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap").Include("~/Scripts/Bootstrap.js"));
-            bundles.Add(new StyleBundle("~/Content/Bootstrap").Include("~/Content/Bootstrap.css"));
-          //  bundles.Add(new StyleBundle("~/Content/Bootstrap-theme").Include("~/Content/Bootstrap-theme.css"));
+            bundles.Add(new StyleBundle("~/Content/Bootstrap").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css"));
+
         }
     }
 }

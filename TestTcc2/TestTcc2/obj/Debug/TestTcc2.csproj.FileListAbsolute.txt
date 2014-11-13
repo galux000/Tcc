@@ -89,11 +89,12 @@ C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.TypeUser.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.updateTables.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.deleteAlbumClass.resources
-C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csproj.GenerateResource.Cache
-C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.dll
-C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.pdb
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.updateMusicaTable.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.newMusicaTable.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.UpdateMusica.resources
-C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csprojResolveAssemblyReference.cache
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.MusicFree.resources
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.pathModelToMusic.resources
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csproj.GenerateResource.Cache
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.dll
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.pdb
+C:\Users\pedro\Documents\Visual Studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csprojResolveAssemblyReference.cache

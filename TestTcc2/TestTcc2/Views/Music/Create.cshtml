@@ -57,6 +57,14 @@
            
         </div>
 
+    <div>
+        Upload
+        <input type="file" name="file_upload" id="file_upload" />
+        @Html.EditorFor(model => model.path, new {id="path" })
+    </div>
+    <div id="uploaded">
+    </div>
+
         <p>
             <input type="submit" value="Create" />
         </p>
@@ -67,7 +75,5 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
 <!-- colocar em um arquivo e chamar aqui -->
+
