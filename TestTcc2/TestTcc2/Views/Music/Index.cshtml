@@ -54,8 +54,9 @@
             @Html.DisplayFor(modelItem => item.Preco)
         </td>
         <td>
+            Play |
             @Html.ActionLink("Edit", "Edit", new { id=item.MusicaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MusicaId }) |
+            @Html.ActionLink("Download", "Download", new { path = item.path }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.MusicaId })
         </td>
     </tr>

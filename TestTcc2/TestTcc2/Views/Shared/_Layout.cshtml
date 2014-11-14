@@ -5,12 +5,13 @@
     <title>@ViewBag.Title - My ASP.NET MVC Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/Content/Bootstrap")
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Uploadify/uploadify.css")" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery") 
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.min.js")"></script>
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Uploadify/uploadify.css")" />
+    
 
     <style>
         body {

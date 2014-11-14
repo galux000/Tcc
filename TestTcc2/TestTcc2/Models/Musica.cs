@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Globalization;
 using System.Web.Security;
+using System.IO;
 
 namespace TestTcc2.Models
 {
@@ -22,5 +23,8 @@ namespace TestTcc2.Models
         public decimal Preco { get; set; }
         public bool isFree { get; set; }
         public string path { get; set; }
+
+
+       
     }
 }

@@ -261,6 +261,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\Musica.cs" />
+    <Compile Include="Models\MusicaArquivos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

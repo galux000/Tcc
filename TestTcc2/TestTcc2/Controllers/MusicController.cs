@@ -15,13 +15,15 @@ namespace TestTcc2.Controllers
     {
         //public Musica music;
         private UsersContext db = new UsersContext();
-        private Musica musicaReference;
+        MusicaArquivos modelMusica = new MusicaArquivos();
+        
         //
         // GET: /Music/
 
         public ActionResult Index()
         {
             var musicas = db.Musicas.Include(m => m.genero);
+            var _arquivos = modelMusica.listaMusica();
             return View(musicas.ToList());
         }
 
@@ -60,7 +62,6 @@ namespace TestTcc2.Controllers
             
             musica.UserId = userId;
             musica.NomeArtista = userName;
-
             if (musica.isFree)
             {
 
@@ -91,6 +92,21 @@ namespace TestTcc2.Controllers
 
             return Content(Url.Content(@"~\mp3\" + file.FileName));
         }
+
+
+        public FileResult Download(string path)
+        {
+            
+            //int _arquivoId = Convert.ToInt32(id);
+            var arquivos = modelMusica.listaMusica();
+
+
+            string nomeArquivo = (from m in arquivos where m.path == path select m.path).First();
+            string contentType = "application/jpg";
+
+            return File(nomeArquivo, contentType, path);
+        } 
+
         //
         // GET: /Music/Edit/5
         public ActionResult Edit(int id = 0)
