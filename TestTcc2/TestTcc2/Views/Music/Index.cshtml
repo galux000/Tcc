@@ -2,17 +2,51 @@
 
 <div>@{
     ViewBag.Title = "Index";
+    //var path = ViewBag.Path;
 }
 </div>
-<div>
-    <script src="Content/audiojs/audio.min.js"></script>
+<script src="Content/audiojs/audio.min.js"></script>
+<div  id="divAudio">
+    
 
-    <audio src="/mp3/teste.mp3" preload="auto" />
+    <audio id="audioPlay" src=x preload="auto" />
 <script>
     audiojs.events.ready(function () {
         var as = audiojs.createAll();
-        
+       //document.getElementsByTagName("src")[0].getAttribute("path");
+        //var test = nomeArquivo;
+       // document.getElementById("audioPlay").innerHTML = "<audio id=\"audioPlay\" src=\""+test+" preload=\"auto\"/>";
     });
+
+    function replaceAll(str, de, para) {
+        var pos = str.indexOf(de);
+        while (pos > -1) {
+            str = str.replace(de, para);
+            pos = str.indexOf(de);
+        }
+        return (str);
+    }
+
+    function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam) {
+                var rep = replaceAll(sParameterName[1], "%2F", "/");
+                rep = replaceAll(rep, "%20", " ");
+                //.replaceAll("%20","/")
+               
+                return rep ;
+            }
+        }
+    }
+    //document.getElementById("audioPlay").innerHTML = "<audio id=\"audioPlay\" src=\"" + getUrlParameter('path') + " preload=\"auto\"/>";
+    var x = getUrlParameter('path');
+    $('#audioPlay').attr('src', x);
+   // document.getElementsByTagName(x)[0].getAttribute("src");
+    
+    //alert(getUrlParameter('path'));
 </script>
 </div>
 <p>
@@ -54,7 +88,7 @@
             @Html.DisplayFor(modelItem => item.Preco)
         </td>
         <td>
-            Play |
+            @Html.ActionLink("Play", "", new { path = item.path }) |
             @Html.ActionLink("Edit", "Edit", new { id=item.MusicaId }) |
             @Html.ActionLink("Download", "Download", new { path = item.path }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.MusicaId })
