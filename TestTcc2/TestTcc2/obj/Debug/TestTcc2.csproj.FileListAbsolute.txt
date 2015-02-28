@@ -97,4 +97,3 @@ C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csproj.GenerateResource.Cache
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.dll
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.pdb
-C:\Users\pedro\Documents\Visual Studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csprojResolveAssemblyReference.cache

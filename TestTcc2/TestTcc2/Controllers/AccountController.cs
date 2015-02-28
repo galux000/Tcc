@@ -49,7 +49,7 @@ namespace TestTcc2.Controllers
                     TempData.Keep("UserType");
                     if (userType.Equals("Musico")) 
                     {
-                        return RedirectToAction("Index","Music");
+                        return RedirectToAction("IndexMusico","Home");
                     }
                     else if (userType.Equals("Ouvinte"))
                     {
@@ -121,7 +121,7 @@ namespace TestTcc2.Controllers
                     //
                     if (userType.Equals("Musico"))
                     {
-                        return RedirectToAction("Index", "Music");
+                        return RedirectToAction("IndexMusico", "Home");
                     }
                     else if (userType.Equals("Ouvinte"))
                     {
@@ -366,7 +366,7 @@ namespace TestTcc2.Controllers
 
                         if (userType.Equals("Musico"))
                         {
-                            return RedirectToAction("Index", "Music");
+                            return RedirectToAction("IndexMusico", "Home");
                         }
                         else if (userType.Equals("Ouvinte"))
                         {

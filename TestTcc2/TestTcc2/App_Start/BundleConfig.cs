@@ -43,6 +43,7 @@ namespace TestTcc2
             bundles.Add(new StyleBundle("~/Content/Bootstrap").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-theme.css"));
+            bundles.Add(new ScriptBundle("~/Scripts/SystemFunctions").Include("~/Scripts/SystemFunctions.js"));
 
         }
     }

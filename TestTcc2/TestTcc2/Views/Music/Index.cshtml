@@ -2,20 +2,21 @@
 
 <div>@{
     ViewBag.Title = "Index";
-    //var path = ViewBag.Path;
+    Layout = "~/Views/Shared/_LayoutMusico.cshtml";
 }
 </div>
 <script src="Content/audiojs/audio.min.js"></script>
 <div  id="divAudio">
     
 
-    <audio id="audioPlay" src=x preload="auto" />
+    <audio id="audioPlay" src=x preload="auto" onplay="true"/>
 <script>
     audiojs.events.ready(function () {
-        var as = audiojs.createAll();
-       //document.getElementsByTagName("src")[0].getAttribute("path");
-        //var test = nomeArquivo;
-       // document.getElementById("audioPlay").innerHTML = "<audio id=\"audioPlay\" src=\""+test+" preload=\"auto\"/>";
+        var as = audiojs.createAll({
+            autoplay: true,
+            autoload: "none"
+        });
+        
     });
 
     function replaceAll(str, de, para) {
@@ -34,19 +35,13 @@
             var sParameterName = sURLVariables[i].split('=');
             if (sParameterName[0] == sParam) {
                 var rep = replaceAll(sParameterName[1], "%2F", "/");
-                rep = replaceAll(rep, "%20", " ");
-                //.replaceAll("%20","/")
-               
+                rep = replaceAll(rep, "%20", " ");               
                 return rep ;
             }
         }
     }
-    //document.getElementById("audioPlay").innerHTML = "<audio id=\"audioPlay\" src=\"" + getUrlParameter('path') + " preload=\"auto\"/>";
     var x = getUrlParameter('path');
     $('#audioPlay').attr('src', x);
-   // document.getElementsByTagName(x)[0].getAttribute("src");
-    
-    //alert(getUrlParameter('path'));
 </script>
 </div>
 <p>

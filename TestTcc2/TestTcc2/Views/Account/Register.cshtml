@@ -1,13 +1,8 @@
 ﻿@model TestTcc2.Models.RegisterModel
 @{
     ViewBag.Title = "Cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*
-@Scripts.Render("~/bundles/modernizr")
-@Styles.Render("~/Content/Bootstrap")
-@Styles.Render("~/Content/Bootstrap-theme")
-*@
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -86,6 +81,4 @@
 
 
 }
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
