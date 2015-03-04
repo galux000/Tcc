@@ -1,0 +1,51 @@
+﻿@model TestTcc2.Models.Musica
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutMusico.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Musica</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.genero.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.genero.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeArtista)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeArtista)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MusicaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
