@@ -276,6 +276,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\empty.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -330,6 +331,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Scripts\binarytheme.js" />
     <Content Include="Scripts\jquery.uploadify.js" />
     <Content Include="Content\Uploadify\uploadify-cancel.png" />
     <Content Include="Content\Uploadify\uploadify.css" />
@@ -410,6 +412,7 @@
     <Content Include="Views\Music\Edit.cshtml" />
     <Content Include="Views\Music\Delete.cshtml" />
     <Content Include="Views\Shared\_LayoutMusico.cshtml" />
+    <Content Include="Views\Shared\_LayoutOuvinte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
