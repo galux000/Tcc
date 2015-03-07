@@ -5,7 +5,7 @@ If You Like our Work Please Share Us, it will help us alot*/
 
 
 body {
-         background-color:#4E504E;
+         background-color:#ffffff;
 }
 
 .nav a {
@@ -13,7 +13,7 @@ body {
 }
 .navbar-header a {
     color:#ffffff !important;
-    padding-right:100px;
+    padding-right:0px;
 }
 
 
@@ -22,17 +22,14 @@ body {
     background-color:#394A57;
 
 }
-#about {
+#musico {
     background-color:#26A066;
 }
 
-#services {
+#ouvinte {
     background-color:#3E8547;
 }
-#contact {
-    
-    background-color:#EB721C;
-}
+
 #justspace {
      
     min-height:400px;

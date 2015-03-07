@@ -413,6 +413,7 @@
     <Content Include="Views\Music\Delete.cshtml" />
     <Content Include="Views\Shared\_LayoutMusico.cshtml" />
     <Content Include="Views\Shared\_LayoutOuvinte.cshtml" />
+    <Content Include="Views\Music\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
