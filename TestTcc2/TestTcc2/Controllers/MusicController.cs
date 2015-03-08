@@ -119,6 +119,18 @@ namespace TestTcc2.Controllers
 
             }
 
+        public ActionResult Search(string search)
+        {
+            var musicas = from m in db.Musicas select m;
+            
+            if (!String.IsNullOrEmpty(search))
+            {
+                musicas = musicas.Where(s => s.Nome.Contains(search));
+               // return RedirectToAction("Search"); //name of view that will return the data
+            }
+            return View(musicas);
+        }
+
         //
         // GET: /Music/Edit/5
         public ActionResult Edit(int id = 0)
