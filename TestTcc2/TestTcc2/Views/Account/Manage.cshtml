@@ -1,6 +1,18 @@
 ﻿@model TestTcc2.Models.LocalPasswordModel
 @{
     ViewBag.Title = "Manage Account";
+    @TempData["UserType"]
+    TempData.Keep("UserType");
+    
+    if(TempData["UserType"].Equals("Musico")){
+        Layout = "~/Views/Shared/_LayoutMusico.cshtml";
+    }
+    else if (TempData["UserType"].Equals("Ouvinte"))
+    {
+        Layout = "~/Views/Shared/_LayoutOuvinte.cshtml";
+    }else{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 }
 
 <hgroup class="title">
@@ -9,7 +21,7 @@
 
 <p class="message-success">@ViewBag.StatusMessage</p>
 
-<p>You're logged in as <strong>@User.Identity.Name</strong>.</p>
+<p>Você está logado como <strong>@User.Identity.Name</strong>.</p>
 
 @if (ViewBag.HasLocalPassword)
 {
@@ -23,7 +35,7 @@ else
 <section id="externalLogins">
     @Html.Action("RemoveExternalLogins")
 
-    <h3>Add an external login</h3>
+    <br />
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
 

@@ -42,11 +42,9 @@ namespace TestTcc2.Controllers
                     
                     //string username = currentUser.UserName;
                     var user = context.UserProfiles.Where(u => u.UserName == model.UserName).First();
-                    
-                    var userType = user.UserType;
-
+                    var userType = user.UserType;                    
                     TempData["UserType"] = userType; //Taking UserType from User Profile to validate in _Layout
-                    TempData.Keep("UserType");
+                    TempData.Peek(userType);
                     if (userType.Equals("Musico")) 
                     {
                         return RedirectToAction("IndexMusico","Home");
@@ -180,9 +178,9 @@ namespace TestTcc2.Controllers
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
+                message == ManageMessageId.ChangePasswordSuccess ? "Sua senha foi trocada."
+                : message == ManageMessageId.SetPasswordSuccess ? "Senha cadastrada."
+                : message == ManageMessageId.RemoveLoginSuccess ? "Um login externo foi removido."
                 : "";
             ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             ViewBag.ReturnUrl = Url.Action("Manage");
@@ -220,7 +218,7 @@ namespace TestTcc2.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
+                        ModelState.AddModelError("", "Senha incorreta.");
                     }
                 }
             }
@@ -243,7 +241,7 @@ namespace TestTcc2.Controllers
                     }
                     catch (Exception)
                     {
-                        ModelState.AddModelError("", String.Format("Unable to create local account. An account with the name \"{0}\" may already exist.", User.Identity.Name));
+                        ModelState.AddModelError("", String.Format("Impossivel criar sua conta. Um usuário com o nome \"{0}\" já existe.", User.Identity.Name));
                     }
                 }
             }
@@ -380,7 +378,7 @@ namespace TestTcc2.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("UserName", "User name already exists. Please enter a different user name.");
+                        ModelState.AddModelError("UserName", "User name já existe, utilize um novo nome.");
                     }
                 }
             }

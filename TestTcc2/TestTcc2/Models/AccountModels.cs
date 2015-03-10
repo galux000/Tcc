@@ -38,15 +38,15 @@ namespace TestTcc2.Models
     public class RegisterExternalLoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nome de Usuário")]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }
 
-        [Display(Name = "Full Name")]
+        [Display(Name = "Nome Completo")]
         public string FullName { get; set; }
 
-        [Display(Name = "Personal Page Link")]
+        [Display(Name = "Link da sua Página")]
         public string Link { get; set; }
         [Display(Name ="Tipo de Usuário")]
         public string UserType { get; set; }
@@ -66,33 +66,33 @@ namespace TestTcc2.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Senha Atual")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "A {0} deve ser menor que {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Nova Senha")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Confirme sua nova senha")]
+        [Compare("NewPassword", ErrorMessage = "A nova senha e sua confirmação não correspondem.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nome do Usuário")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Senha")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Lembrar?")]
         public bool RememberMe { get; set; }
     }
 
@@ -104,14 +104,14 @@ namespace TestTcc2.Models
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "A {0} deve ser menor que {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirme sua nova senha")]
+        [Compare("Password", ErrorMessage = "A nova senha e sua confirmação não correspondem.")]
         public string ConfirmPassword { get; set; }
 
         [Required]
