@@ -1,0 +1,29 @@
+﻿@model TestTcc2.Models.UsuarioMusica
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UsuarioMusica</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MusicaId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MusicaId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UsuarioMusicaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

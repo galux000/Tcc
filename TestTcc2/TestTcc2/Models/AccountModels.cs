@@ -20,6 +20,7 @@ namespace TestTcc2.Models
         public DbSet<ExternalUserInformation> ExternalUsers { get; set; }
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Musica> Musicas { get; set; }
+        public DbSet<UsuarioMusica> UsuarioMusicas { get; set; }
 
     }
 

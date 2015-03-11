@@ -1,5 +1,4 @@
-﻿@model IEnumerable<TestTcc2.Models.Musica>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -31,6 +30,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "IndexOuvinte", "Home")</li>
+                    <li>@Html.ActionLink("Minhas Músicas","Index","UsuarioMusica")</li>
                 </ul>
                  @using (Html.BeginForm("Search", "Music",null, FormMethod.Post, new { @class ="navbar-form" , role="search"}))
                     {
