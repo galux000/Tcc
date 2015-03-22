@@ -43,9 +43,7 @@
         </td>
         <td>
             @Html.ActionLink("Play", "", new { path = item.path }) |
-        </td>
-        <td>
-            <button type="button" class="addmusic" data-id="@item.MusicaId">Add</button>
+            <button type="button" class="addmusic" data-id="@item.MusicaId">Add</button> 
         </td>
     </tr>
 }
@@ -53,7 +51,7 @@
 </table>
 
 <script type="text/javascript">
-    var url = '@Url.Action("Create", "UsuarioMusica ")'; // adjust to suit
+    var url = '@Url.Action("Create", "UsuarioMusica")'; // adjust to suit
     $('.addmusic').click(function () {
         var self = $(this);
         // Get the ID
@@ -61,8 +59,8 @@
         // post the value
         $.post(url, { musicaID: id }, function (data) {
             if (data) {
-                // remove the button so the item cannot be added more than once
-                self.remove();
+                var row = self.closest('tr')
+                row.remove();
             } else {
                 // Oops, something went wrong - display message?
             }

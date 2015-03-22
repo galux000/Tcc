@@ -22,9 +22,6 @@ namespace TestTcc2.Models
         public Genero genero { get; set; }
         public decimal Preco { get; set; }
         public bool isFree { get; set; }
-        public string path { get; set; }
-
-
-       
+        public string path { get; set; }  
     }
 }

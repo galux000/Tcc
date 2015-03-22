@@ -1,7 +1,7 @@
 ﻿@model TestTcc2.Models.LocalPasswordModel
 @{
     ViewBag.Title = "Manage Account";
-    @TempData["UserType"]
+    @*TempData["UserType"]*@
     TempData.Keep("UserType");
     
     if(TempData["UserType"].Equals("Musico")){

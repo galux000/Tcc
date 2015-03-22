@@ -115,8 +115,6 @@ namespace TestTcc2.Controllers
             var script = "$document.getElementById(\"divAudio\").innerHTML = \"<audio id=\"audioPlay\" src=\""+nomeArquivo+"\" preload=\"auto\"/>";
                 //ViewBag.Path = nomeArquivo;
                 return nomeArquivo;
-
-
             }
 
         public ActionResult Search(string search)

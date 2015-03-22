@@ -14,13 +14,56 @@ namespace TestTcc2.Controllers
     public class UsuarioMusicaController : Controller
     {
         private UsersContext db = new UsersContext();
+        MusicaArquivos modelMusica = new MusicaArquivos();
 
         //
         // GET: /UsuarioMusica/
 
         public ActionResult Index()
         {
-            return View(db.UsuarioMusicas.ToList());
+            try
+            {
+                var membership = (WebMatrix.WebData.SimpleMembershipProvider)Membership.Provider;
+                var idUser = membership.GetUserId(User.Identity.Name);
+
+                var modelUM = db.UsuarioMusicas.Where(p => p.UserId == idUser).ToList();
+
+                var modelMusicaas = from user in modelUM
+                                    join music in db.Musicas on user.MusicaId equals music.MusicaId 
+   
+                                    select new Musica
+                                    {
+                                        Nome = music.Nome,
+                                        NomeArtista=music.NomeArtista,
+                                        genero = music.genero
+                                    };
+
+                return View(modelMusicaas);
+
+            }
+            catch (Exception ex)
+            {
+                //aqui vai o log de erro
+
+                return null;
+
+            }
+            return null;
+
+
+        }
+
+        public FileResult Download(string path)
+        {
+
+            //int _arquivoId = Convert.ToInt32(id);
+            var arquivos = modelMusica.listaMusica();
+
+
+            string nomeArquivo = (from m in arquivos where m.path == path select m.path).First();
+            string contentType = "application/mp3";
+
+            return File(nomeArquivo, contentType, path);
         }
 
         //
@@ -65,7 +108,7 @@ namespace TestTcc2.Controllers
 
             if (ModelState.IsValid)
             {
-                
+
                 db.UsuarioMusicas.Add(x);
                 db.SaveChanges();
                 return Json(true);
