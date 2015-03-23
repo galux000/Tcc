@@ -18,6 +18,10 @@ namespace TestTcc2.Models
         public int UsuarioMusicaId { get; set; }
         public int UserId { get; set; } //get UserId from current user logged at system
         public int MusicaId {get; set;} //get MusicId from music saved in database
+        public string Nome { get; set; }
+        public string NomeArtista { get; set; }
+        public Genero genero { get; set; }
+        public string path { get; set; } 
 
     }
 }

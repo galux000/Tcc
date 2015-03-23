@@ -16,53 +16,21 @@ namespace TestTcc2.Controllers
         private UsersContext db = new UsersContext();
         MusicaArquivos modelMusica = new MusicaArquivos();
 
+
         //
         // GET: /UsuarioMusica/
 
         public ActionResult Index()
         {
-            try
-            {
-                var membership = (WebMatrix.WebData.SimpleMembershipProvider)Membership.Provider;
-                var idUser = membership.GetUserId(User.Identity.Name);
-
-                var modelUM = db.UsuarioMusicas.Where(p => p.UserId == idUser).ToList();
-
-                var modelMusicaas = from user in modelUM
-                                    join music in db.Musicas on user.MusicaId equals music.MusicaId 
-   
-                                    select new Musica
-                                    {
-                                        Nome = music.Nome,
-                                        NomeArtista=music.NomeArtista,
-                                        genero = music.genero
-                                    };
-
-                return View(modelMusicaas);
-
-            }
-            catch (Exception ex)
-            {
-                //aqui vai o log de erro
-
-                return null;
-
-            }
-            return null;
-
+            return View(db.UsuarioMusicas.ToList());
 
         }
 
         public FileResult Download(string path)
         {
-
-            //int _arquivoId = Convert.ToInt32(id);
             var arquivos = modelMusica.listaMusica();
-
-
             string nomeArquivo = (from m in arquivos where m.path == path select m.path).First();
             string contentType = "application/mp3";
-
             return File(nomeArquivo, contentType, path);
         }
 
@@ -100,16 +68,22 @@ namespace TestTcc2.Controllers
                 idUser = membership.GetUserId(User.Identity.Name);
             }
 
-            var x = new UsuarioMusica()
+            var musicas = db.Musicas.Where(x => x.MusicaId == musicaID).Select(x => new {x.Nome, x.NomeArtista, x.genero, x.path }).ToList().First();
+
+            var y = new UsuarioMusica()
             {
                 UserId = idUser,
-                MusicaId = musicaID
+                MusicaId = musicaID,
+                genero = musicas.genero,
+                Nome = musicas.Nome,
+                NomeArtista = musicas.NomeArtista,
+                path = musicas.path
             };
 
             if (ModelState.IsValid)
             {
 
-                db.UsuarioMusicas.Add(x);
+                db.UsuarioMusicas.Add(y);
                 db.SaveChanges();
                 return Json(true);
             }

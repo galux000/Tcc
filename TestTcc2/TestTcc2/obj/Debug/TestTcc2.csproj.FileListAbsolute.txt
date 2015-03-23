@@ -115,7 +115,7 @@ C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.MusicFree.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.pathModelToMusic.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.UsuarioMusica.resources
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.updateUsuarioMusica.resources
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csproj.GenerateResource.Cache
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.dll
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.pdb
-C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csprojResolveAssemblyReference.cache

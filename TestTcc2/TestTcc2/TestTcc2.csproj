@@ -269,6 +269,10 @@
     <Compile Include="Migrations\201503102348383_UsuarioMusica.Designer.cs">
       <DependentUpon>201503102348383_UsuarioMusica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503232117035_update-UsuarioMusica.cs" />
+    <Compile Include="Migrations\201503232117035_update-UsuarioMusica.Designer.cs">
+      <DependentUpon>201503232117035_update-UsuarioMusica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Genero.cs" />
@@ -523,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503102348383_UsuarioMusica.resx">
       <DependentUpon>201503102348383_UsuarioMusica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503232117035_update-UsuarioMusica.resx">
+      <DependentUpon>201503232117035_update-UsuarioMusica.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
