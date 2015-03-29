@@ -15,32 +15,6 @@ namespace TestTcc2.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult Usuario()
-        {
-            ViewBag.Message = "Usuario";
-            return View();
-        }
-
-        public ActionResult Musico()
-        {
-            ViewBag.Message = "Musico";
-            return View();
-        }
-
         public ActionResult IndexMusico() 
         {
             ViewBag.Message = "Bem vindo a sua página como Músico";
