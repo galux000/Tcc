@@ -21,6 +21,9 @@ namespace TestTcc2.Models
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Musica> Musicas { get; set; }
         public DbSet<UsuarioMusica> UsuarioMusicas { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
     }
 

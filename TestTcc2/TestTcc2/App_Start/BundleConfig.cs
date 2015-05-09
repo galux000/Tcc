@@ -46,6 +46,8 @@ namespace TestTcc2
             //bundles.Add(new ScriptBundle("~/Scripts/SystemFunctions").Include("~/Scripts/SystemFunctions.js"));
             bundles.Add(new StyleBundle("~/Content/empty").Include("~/Content/empty.css"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/AudioPlay").Include("~/Scripts/AudioPlay.js"));
+
 
         }
     }

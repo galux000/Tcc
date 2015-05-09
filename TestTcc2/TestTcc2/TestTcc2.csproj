@@ -212,6 +212,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusicController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UsuarioMusicaController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -273,13 +274,27 @@
     <Compile Include="Migrations\201503232117035_update-UsuarioMusica.Designer.cs">
       <DependentUpon>201503232117035_update-UsuarioMusica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505091656441_carrinho.cs" />
+    <Compile Include="Migrations\201505091656441_carrinho.Designer.cs">
+      <DependentUpon>201505091656441_carrinho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505091709346_carrinhoItem.cs" />
+    <Compile Include="Migrations\201505091709346_carrinhoItem.Designer.cs">
+      <DependentUpon>201505091709346_carrinhoItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\Musica.cs" />
     <Compile Include="Models\MusicaArquivos.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\UsuarioMusica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-TestTcc2-20140907134144.mdf" />
@@ -354,6 +369,7 @@
     <Content Include="Images\payment-icon.png" />
     <Content Include="Images\rock-band.png" />
     <Content Include="Images\user_group_new.png" />
+    <Content Include="Scripts\AudioPlay.js" />
     <Content Include="Scripts\binarytheme.js" />
     <Content Include="Scripts\jquery.uploadify.js" />
     <Content Include="Content\Uploadify\uploadify-cancel.png" />
@@ -365,6 +381,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -400,7 +418,6 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\SystemFunctions.js" />
     <Content Include="Scripts\uploadify.swf" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -447,8 +464,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\IndexMusico.cshtml" />
-    <Content Include="Views\Home\IndexOuvinte.cshtml" />
     <Content Include="Views\Music\Index.cshtml" />
     <Content Include="Views\Music\Details.cshtml" />
     <Content Include="Views\Music\Create.cshtml" />
@@ -456,7 +471,7 @@
     <Content Include="Views\Music\Delete.cshtml" />
     <Content Include="Views\Shared\_LayoutMusico.cshtml" />
     <Content Include="Views\Shared\_LayoutOuvinte.cshtml" />
-    <Content Include="Views\Music\Search.cshtml" />
+    <Content Include="Views\ShoppingCart\Search.cshtml" />
     <Content Include="Views\UsuarioMusica\Index.cshtml" />
     <Content Include="Views\UsuarioMusica\Details.cshtml" />
     <Content Include="Views\UsuarioMusica\Create.cshtml" />
@@ -530,6 +545,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503232117035_update-UsuarioMusica.resx">
       <DependentUpon>201503232117035_update-UsuarioMusica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505091656441_carrinho.resx">
+      <DependentUpon>201505091656441_carrinho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505091709346_carrinhoItem.resx">
+      <DependentUpon>201505091709346_carrinhoItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -47,11 +47,11 @@ namespace TestTcc2.Controllers
                     TempData.Peek(userType);
                     if (userType.Equals("Musico")) 
                     {
-                        return RedirectToAction("IndexMusico","Home");
+                        return RedirectToAction("Index","Music");
                     }
                     else if (userType.Equals("Ouvinte"))
                     {
-                        return RedirectToAction("IndexOuvinte","Home");
+                        return RedirectToAction("Index","UsuarioMusica");
                     }
                     else
                     {

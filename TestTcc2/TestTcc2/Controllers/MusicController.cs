@@ -68,9 +68,6 @@ namespace TestTcc2.Controllers
                 musica.Preco = 0;
             }
 
-            //Here I try to take the path value
-            //musica.path = musicaReference.path;
-
             if (ModelState.IsValid)
             {
                 db.Musicas.Add(musica);
@@ -88,8 +85,6 @@ namespace TestTcc2.Controllers
             var file = Request.Files["Filedata"];
             string savePath = Server.MapPath(@"~\mp3\" + file.FileName);
             file.SaveAs(savePath);
-           // musicaReference.path = "~\\mp3\\"+file.FileName;
-
             return Content(Url.Content(@"~\mp3\" + file.FileName));
         }
 
@@ -117,17 +112,7 @@ namespace TestTcc2.Controllers
                 return nomeArquivo;
             }
 
-        public ActionResult Search(string search)
-        {
-            var musicas = from m in db.Musicas select m;
-            
-            if (!String.IsNullOrEmpty(search))
-            {
-                musicas = musicas.Where(s => s.Nome.Contains(search));
-               // return RedirectToAction("Search"); //name of view that will return the data
-            }
-            return View(musicas);
-        }
+
 
         //
         // GET: /Music/Edit/5

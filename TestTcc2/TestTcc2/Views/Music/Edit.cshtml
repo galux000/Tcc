@@ -40,11 +40,6 @@
             @Html.ValidationMessageFor(model => model.Preco)
         </div>
         <br />
-        <div  class="editor-field">
-            <span>Upload: </span>
-            <input type="text" />
-            <input type="button" value="Upload" />
-        </div>
         <br />
         <p>
             <input type="submit" value="Salvar" />
@@ -55,7 +50,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

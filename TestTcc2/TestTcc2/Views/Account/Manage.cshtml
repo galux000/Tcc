@@ -1,7 +1,7 @@
 ﻿@model TestTcc2.Models.LocalPasswordModel
 @{
-    ViewBag.Title = "Manage Account";
-    @*TempData["UserType"]*@
+    ViewBag.Title = "Gerenciar Conta";
+    @TempData["UserType"]
     TempData.Keep("UserType");
     
     if(TempData["UserType"].Equals("Musico")){
@@ -39,6 +39,4 @@ else
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+

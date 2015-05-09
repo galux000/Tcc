@@ -6,12 +6,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/Bootstrap")
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Uploadify/uploadify.css")" />
-    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @*Scripts.Render("~/bundles/SystemFunctions")*@ 
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.min.js")"></script>
     <style>
         body {
             padding-top: 60px;
@@ -43,9 +38,7 @@
                             <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>}</li>
                 </ul>
             </div>
-            <!--/.nav-collapse -->
         </div>
-
     </div>
 
 
@@ -62,29 +55,6 @@
             <p class="text-muted">@DateTime.Now.Year , by: <a href="https://www.linkedin.com/in/pedrohenrique1">Pedro Henrique</a></p>
         </div>
     </div>
-    @RenderSection("scripts", required: false)
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#isFree").change(function () {
-                if ($("#isFree").prop("checked")) {
-                    $("#Preco").prop("disabled", "disabled");
-                } else {
-                    $("#Preco").prop("disabled", "");
-                }
-            });
-        });
-
-        $(function () {
-            $('#file_upload').uploadify({
-                'swf': "@Url.Content("~/Scripts/uploadify.swf")",
-                'cancelImg': "@Url.Content("~/Content/Uploadify/uploadify-cancel.png")",
-                'uploader': "@Url.Action("Upload", "Music")",
-                'onUploadSuccess': function (file, data, response) {
-                    $("#path").val(data);
-                    // $("#uploaded").append("<img src='" + data + "' alt='Uploaded Image' />");
-                }
-            });
-        });
-    </script>
+    
 </body>
 </html>
