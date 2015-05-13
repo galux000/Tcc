@@ -22,7 +22,8 @@ namespace TestTcc2.Controllers
 
         public ActionResult Index()
         {
-            return View(db.UsuarioMusicas.ToList());
+            var usuarioMusica = db.UsuarioMusicas.Include(m => m.genero);
+            return View(usuarioMusica.ToList());
 
         }
 
@@ -74,6 +75,7 @@ namespace TestTcc2.Controllers
             {
                 UserId = idUser,
                 MusicaId = musicaID,
+                GeneroId = musicas.genero.GeneroId,
                 genero = musicas.genero,
                 Nome = musicas.Nome,
                 NomeArtista = musicas.NomeArtista,

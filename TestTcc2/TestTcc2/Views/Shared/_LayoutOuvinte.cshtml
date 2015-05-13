@@ -9,7 +9,6 @@
     @Styles.Render("~/Content/Bootstrap")
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Uploadify/uploadify.css")" />
     @Scripts.Render("~/bundles/jquery")
-    @*Scripts.Render("~/bundles/SystemFunctions")*@ 
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.uploadify.min.js")"></script>
     <style>
@@ -24,11 +23,10 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 </button>
-                <a class="navbar-brand" href="#">@Html.ActionLink("your logo here", "IndexOuvinte", "Home")</a>
+                <a class="navbar-brand" href="#">@Html.ActionLink("Logo","Index","UsuarioMusica")</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "IndexOuvinte", "Home")</li>
                     <li>@Html.ActionLink("Minhas Músicas","Index","UsuarioMusica")</li>
                 </ul>
                  @using (Html.BeginForm("Search", "ShoppingCart",null, FormMethod.Post, new { @class ="navbar-form" , role="search"}))
@@ -51,7 +49,7 @@
                  }     
                 <ul class="nav navbar-nav navbar-right">
                         <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
-                        <li>@Html.ActionLink("Manage Account", "Manage", "Account")</li>
+                        <li>@Html.ActionLink("Gerenciar Conta", "Manage", "Account")</li>
                         <li>@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {
                             @Html.AntiForgeryToken()

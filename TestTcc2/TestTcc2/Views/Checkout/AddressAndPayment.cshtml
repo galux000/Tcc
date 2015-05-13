@@ -1,0 +1,136 @@
+﻿@model TestTcc2.Models.Order
+
+@{
+    ViewBag.Title = "Endereço e Pagamento";
+    Layout = "~/Views/Shared/_LayoutOuvinte.cshtml";
+}
+
+<h2>Informações de Pagamento</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <h3>Dados Pessoais</h3>
+            <div class="form-inline">
+                <!-- Text input-->
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="FirstName">Nome</label>
+                    <div>
+                        @Html.TextBoxFor(model => model.FirstName, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="LastName">Sobrenome</label>
+                    <div>
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <h3>Endereço de Cobrança</h3>
+            <!-- Text input-->
+            <div class="form-inline">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label class="control-label" for="address">Endereço</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="PostalCode">CEP</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.PostalCode, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PostalCode)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-inline">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="city">Cidade</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.City, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.City)
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="State">Estado</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.State, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.State)
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="Country">País</label>
+                        <div>
+                            @Html.TextBoxFor(model => model.Country, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Country)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <h3>Contato</h3>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label class="control-label" for="phone">Telefone</label>
+                    <div>
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Phone)
+                        <span class="help-block">Não utilize espaços</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="control-label" for="email">E-mail</label>
+                    <div></div>
+                    <div>
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Email)
+                        <span class="help-block">Ex: usuario@email.com</span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+    
+    <fieldset>
+        <legend>Payment</legend>
+        <p>Código de promoção: "FREE"</p>
+
+        <div class="editor-label">
+            @Html.Label("Promo Code")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("PromoCode", null, new { @class="form-control" })
+        </div>
+    </fieldset>
+   
+    <input type="submit" value="Submit Order" />
+</form>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

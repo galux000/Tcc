@@ -22,16 +22,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">@Html.ActionLink("your logo here", "IndexMusico", "Home")</a>
+                <a class="navbar-brand" href="#">@Html.ActionLink("Suas Músicas", "Index", "Music")</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "IndexMusico", "Home")</li>
-                    <li>@Html.ActionLink("Suas Músicas", "Index", "Music")</li>
-                    
+                    <li>@Html.ActionLink("Logo", "Index", "Music")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Manage Account", "Manage", "Account")</li>
+                        <li>@Html.ActionLink("Gerenciar Conta", "Manage", "Account")</li>
                         <li>@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {
                             @Html.AntiForgeryToken()

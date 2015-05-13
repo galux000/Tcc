@@ -23,6 +23,8 @@ namespace TestTcc2.Controllers
                 CartItems = cart.GetCartItems(),
                 CartTotal = cart.GetTotal()
             };
+
+           
             // Return the view
             return View(viewModel);
         }
@@ -82,12 +84,13 @@ namespace TestTcc2.Controllers
 
         public ActionResult Search(string search)
         {
-            var musicas = from m in storeDB.Musicas select m;
+            
+             var musicas = from m in storeDB.Musicas select m;
 
             if (!String.IsNullOrEmpty(search))
             {
+               
                 musicas = musicas.Where(s => s.Nome.Contains(search));
-                // return RedirectToAction("Search"); //name of view that will return the data
             }
             return View(musicas);
         }

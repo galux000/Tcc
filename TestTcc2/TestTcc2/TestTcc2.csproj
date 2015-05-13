@@ -210,6 +210,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusicController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
@@ -278,9 +279,13 @@
     <Compile Include="Migrations\201505091656441_carrinho.Designer.cs">
       <DependentUpon>201505091656441_carrinho.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505091709346_carrinhoItem.cs" />
-    <Compile Include="Migrations\201505091709346_carrinhoItem.Designer.cs">
-      <DependentUpon>201505091709346_carrinhoItem.cs</DependentUpon>
+    <Compile Include="Migrations\201505111848044_UsuarioMusica_Add_GeneroID.cs" />
+    <Compile Include="Migrations\201505111848044_UsuarioMusica_Add_GeneroID.Designer.cs">
+      <DependentUpon>201505111848044_UsuarioMusica_Add_GeneroID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505131845505_updateOrder.cs" />
+    <Compile Include="Migrations\201505131845505_updateOrder.Designer.cs">
+      <DependentUpon>201505131845505_updateOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -383,6 +388,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -462,8 +469,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Music\Index.cshtml" />
     <Content Include="Views\Music\Details.cshtml" />
     <Content Include="Views\Music\Create.cshtml" />
@@ -549,8 +554,11 @@
     <EmbeddedResource Include="Migrations\201505091656441_carrinho.resx">
       <DependentUpon>201505091656441_carrinho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505091709346_carrinhoItem.resx">
-      <DependentUpon>201505091709346_carrinhoItem.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505111848044_UsuarioMusica_Add_GeneroID.resx">
+      <DependentUpon>201505111848044_UsuarioMusica_Add_GeneroID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505131845505_updateOrder.resx">
+      <DependentUpon>201505131845505_updateOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
