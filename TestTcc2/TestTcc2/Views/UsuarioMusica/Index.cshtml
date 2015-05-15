@@ -4,14 +4,56 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutOuvinte.cshtml";
 }
-<h2>Index</h2>
+<h2>Suas Músicas</h2>
+<script src="Content/audiojs/audio.min.js"></script>
+<div class="row">
+<div class="col-md-4"></div>
+<div id="divAudio" class="col-md-4">
 
+    <audio id="audioPlay" src="x" preload="auto" onplay="true" />
+    <script>
+        audiojs.events.ready(function () {
+            var as = audiojs.createAll({
+                autoplay: true,
+                autoload: "none"
+            });
+
+        });
+
+        function replaceAll(str, de, para) {
+            var pos = str.indexOf(de);
+            while (pos > -1) {
+                str = str.replace(de, para);
+                pos = str.indexOf(de);
+            }
+            return (str);
+        }
+
+        function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    var rep = replaceAll(sParameterName[1], "%2F", "/");
+                    rep = replaceAll(rep, "%20", " ");
+                    return rep;
+                }
+            }
+        }
+        var x = getUrlParameter('path');
+        $('#audioPlay').attr('src', x);
+    </script>
+</div>
+<div class="col-md-4"></div>
+</div>
+<br />
 <table class="table table-hover table-bordered">
     <tr>
         <th>
             <span>Genero</span>
         </th>
-        
+
         <th>
             <span>Nome</span>
         </th>
@@ -20,23 +62,24 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.genero.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeArtista)
-        <td>
-            @Html.ActionLink("Play", "", new { path = item.path }) |
-            @Html.ActionLink("Download", "Download", new { path = item.path }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioMusicaId })
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.genero.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeArtista)
+            <td>
+                @Html.ActionLink("Play", "", new { path = item.path }) |
+                @Html.ActionLink("Download", "Download", new { path = item.path }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UsuarioMusicaId })
+            </td>
+        </tr>
 
-}
+    }
 
 </table>

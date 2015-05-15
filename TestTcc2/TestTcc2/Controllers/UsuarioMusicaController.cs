@@ -153,5 +153,17 @@ namespace TestTcc2.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public string play(string path)
+        {
+            var arquivos = modelMusica.listaMusica();
+
+            string nomeArquivo = (from m in arquivos where m.path == path select m.path).First();
+            var script = "$document.getElementById(\"divAudio\").innerHTML = \"<audio id=\"audioPlay\" src=\"" + nomeArquivo + "\" preload=\"auto\"/>";
+            //ViewBag.Path = nomeArquivo;
+            return nomeArquivo;
+        }
+    
     }
+
 }

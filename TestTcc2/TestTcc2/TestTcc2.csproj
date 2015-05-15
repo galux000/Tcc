@@ -368,6 +368,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Images\github.png" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\pedro.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\money.png" />
     <Content Include="Images\music.png" />

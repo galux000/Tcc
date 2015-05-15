@@ -6,9 +6,11 @@
 }
 </div>
 <script src="Content/audiojs/audio.min.js"></script>
-<div  id="divAudio">
-   
-    <audio id="audioPlay" src=x preload="auto" onplay="true"/>
+<div class="row">
+<div class="col-md-4"></div>
+<div id="divAudio" class="col-md-4">
+
+    <audio id="audioPlay" src="x" preload="auto" onplay="true" />
     <script>
         audiojs.events.ready(function () {
             var as = audiojs.createAll({
@@ -41,8 +43,11 @@
         }
         var x = getUrlParameter('path');
         $('#audioPlay').attr('src', x);
-</script>   
+    </script>
 </div>
+<div class="col-md-4"></div>
+</div>
+<br />
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
