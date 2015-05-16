@@ -123,3 +123,9 @@ C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.pdb
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.csprojResolveAssemblyReference.cache
 C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.updateOrder.resources
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\bin\log4net.dll
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\bin\PayPal.dll
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\bin\paypal_base.dll
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\bin\log4net.xml
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.change_PriceType_From_Musica.resources
+C:\Users\pedro\documents\visual studio 2012\Projects\TestTcc2\TestTcc2\obj\Debug\TestTcc2.Migrations.change_PriceType_From_Musica_back.resources

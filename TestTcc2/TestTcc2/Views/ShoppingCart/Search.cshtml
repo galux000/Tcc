@@ -44,8 +44,17 @@
         <td>
             @Html.ActionLink("Play", "", new { path = item.path }) |
             @if (item.Preco > 0)
-            {  
-             @Html.ActionLink("Adicionar ao carrinho", "AddToCart", "ShoppingCart", new { id = item.MusicaId },"")
+            {
+                string price = item.Preco.ToString().Replace(",", ".");
+               var payPalBtn = PayPal.ButtonManager.AddToCartButton.Create(
+                       business: "pedrro2-facilitator@hotmail.com",
+                       itemName: item.Nome,
+                       amount: price
+                       );      
+              HtmlString payPalBtnHtml = new HtmlString(payPalBtn.WebSiteCode);
+                
+             @payPalBtnHtml   
+             @Html.ActionLink("| Adicionar ao carrinho", "AddToCart", "ShoppingCart", new { id = item.MusicaId },"")
             }else{
             <button type="button" class="addmusic" data-id="@item.MusicaId">Add</button>
             }
